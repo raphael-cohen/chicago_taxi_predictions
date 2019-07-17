@@ -31,16 +31,10 @@ airport_lon <- -87.884544
 # devtools::install_github("dkahle/ggmap", ref = "tidyup")
 library(ggmap)
 ggmap(get_googlemap())
-register_google(key = "AIzaSyBoJ1aI3DsDP8BiAH1pw33Kb17pfW0fIRo")
-
-# map_of_Chicago <- get_map(location = c(lon = mean(df$lon), lat = mean(df$lat)),
-#                           zoom = 12, maptype = "roadmap", source = "google", api_key = "AIzaSyA1OIjkDvA9DqP8mSOwbsDuYlv-7EosZYY")#"watercolor")#, scale = 1)
-
-# map_of_Chicago <- get_map(location = c(lon = lon, lat = lat),
-#                           zoom = 12, maptype = "roadmap", source = "google", api_key = "AIzaSyA1OIjkDvA9DqP8mSOwbsDuYlv-7EosZYY")#"watercolor")#, scale = 1)
+register_google(key = "google_key")
 
 map_of_Chicago <- get_map(location = c(lon = airport_lon, lat = airport_lat),
-                          zoom = 12, maptype = "roadmap", source = "google", api_key = "AIzaSyA1OIjkDvA9DqP8mSOwbsDuYlv-7EosZYY")#"watercolor")#, scale = 1)
+                          zoom = 12, maptype = "roadmap", source = "google", api_key = "google_key")#"watercolor")#, scale = 1)
 
 
 p <- ggmap(map_of_Chicago, extent = "panel", maprange=FALSE)
